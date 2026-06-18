@@ -1,5 +1,5 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+# AI for Data Management: Driving Trust, Quality, and Efficiency
+This is the repository for the LinkedIn Learning course `AI for Data Management: Driving Trust, Quality, and Efficiency`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![lil-thumbnail-url]
 
