@@ -1,0 +1,26 @@
+customer_id,contact_name,region,segment,account_created_date
+CUST001,Taylor Smith,East,SMB,2021-08-17
+CUST002,Casey Brown,Central,Enterprise,2022-08-28
+CUST003,Finley Johnson,North,Enterprise,2021-08-12
+CUST004,Avery Moore,Central,Enterprise,2022-07-29
+CUST005,Quinn Allen,West,SMB,2022-04-05
+CUST006,Lee Wilson,North,SMB,2022-12-16
+CUST007,Finley Thomas,East,SMB,2021-08-09
+CUST008,Dana Brown,North,Education,2021-04-10
+CUST009,Drew Jackson,Central,Government,2021-02-14
+CUST010,Gray Allen,North,Education,2021-03-22
+CUST011,Kendall Anderson,Central,Government,2022-08-15
+CUST012,Quinn Williams,North,SMB,2021-10-24
+CUST013,Morgan Davis,North,Education,2021-10-12
+CUST014,Gray Jackson,South,Government,2021-12-30
+CUST015,Quinn Wilson,North,SMB,2022-07-01
+CUST016,Avery Garcia,West,Education,2021-10-04
+CUST017,Kendall Davis,East,Enterprise,2021-08-23
+CUST018,Jordan Thomas,West,Government,2021-03-09
+CUST019,Quinn Clark,East,SMB,2022-11-03
+CUST020,Hayden White,West,SMB,2021-09-29
+CUST021,Casey Davis,Central,Government,2022-08-22
+CUST022,Finley Clark,West,Government,2021-08-13
+CUST023,Casey Moore,West,Enterprise,2021-02-18
+CUST024,Taylor Jones,South,Education,2022-09-03
+CUST025,Morgan White,West,Education,2022-06-26

@@ -1,0 +1,16 @@
+product_id,product_name,category,unit_price,supplier_id
+PRD001,Storage Unit - Model A,Storage,149.99,SUP001
+PRD002,Storage Unit - Model B,Storage,249.99,SUP001
+PRD003,Display Panel - Model X,Electronics,599.99,SUP002
+PRD004,Display Panel - Model Y,Electronics,399.99,SUP002
+PRD005,Desk Unit - Standard,Furniture,189.99,SUP003
+PRD006,Desk Unit - Adjustable,Furniture,349.99,SUP003
+PRD007,Connectivity Device - Type A,Electronics,89.99,SUP004
+PRD008,Connectivity Device - Type B,Electronics,129.99,SUP004
+PRD009,Cable Assembly - 2m,Accessories,19.99,SUP005
+PRD010,Cable Assembly - 5m,Accessories,29.99,SUP005
+PRD011,Power Unit - Standard,Electronics,79.99,SUP001
+PRD012,Power Unit - Extended,Electronics,119.99,SUP001
+PRD013,Seating Unit - Model A,Furniture,299.99,SUP002
+PRD014,Seating Unit - Model B,Furniture,449.99,SUP002
+PRD015,Rack Unit - 12U,Infrastructure,199.99,SUP003

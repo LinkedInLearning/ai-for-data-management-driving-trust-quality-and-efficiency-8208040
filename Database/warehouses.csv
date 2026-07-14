@@ -1,0 +1,6 @@
+warehouse_id,warehouse_name,region,capacity_units
+WH001,North Region Warehouse,North,10000
+WH002,South Region Warehouse,South,8000
+WH003,East Region Warehouse,East,12000
+WH004,West Region Warehouse,West,9000
+WH005,Central Fulfilment Hub,Central,15000

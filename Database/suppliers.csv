@@ -1,0 +1,6 @@
+supplier_id,supplier_name,supplier_type,lead_time_days
+SUP001,Vendor A,Domestic,3
+SUP002,Vendor B,Domestic,5
+SUP003,Vendor C,International,14
+SUP004,Vendor D,International,21
+SUP005,Vendor E,Domestic,7

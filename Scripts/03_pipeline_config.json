@@ -1,0 +1,67 @@
+{
+  "pipeline_name": "daily_order_ingest",
+  "description": "Ingests completed orders from the order management system into the data warehouse. Runs nightly at 01:00.",
+  "schedule": "0 1 * * *",
+  "owner_team": "data-engineering",
+  "sla_minutes": 60,
+  "steps": [
+    {
+      "step_id": "extract_orders",
+      "type": "extract",
+      "source": "order_management_system",
+      "query": "SELECT * FROM orders WHERE updated_at >= :last_run_timestamp",
+      "output_table": "staging.orders_raw",
+      "on_failure": "abort"
+    },
+    {
+      "step_id": "extract_order_items",
+      "type": "extract",
+      "source": "order_management_system",
+      "query": "SELECT * FROM order_items WHERE order_id IN (SELECT order_id FROM staging.orders_raw)",
+      "output_table": "staging.order_items_raw",
+      "on_failure": "abort"
+    },
+    {
+      "step_id": "validate_orders",
+      "type": "data_quality",
+      "checks": [
+        { "check": "no_null_customer_id", "table": "staging.orders_raw", "column": "customer_id" },
+        { "check": "status_in_allowed_values", "table": "staging.orders_raw", "column": "status",
+          "allowed_values": ["Completed", "Shipped", "Processing", "Cancelled"] },
+        { "check": "row_count_threshold", "table": "staging.orders_raw", "min_rows": 100 }
+      ],
+      "on_failure": "alert_and_abort"
+    },
+    {
+      "step_id": "load_orders",
+      "type": "load",
+      "source_table": "staging.orders_raw",
+      "target_table": "warehouse.orders",
+      "load_strategy": "upsert",
+      "merge_key": "order_id",
+      "on_failure": "abort"
+    },
+    {
+      "step_id": "load_order_items",
+      "type": "load",
+      "source_table": "staging.order_items_raw",
+      "target_table": "warehouse.order_items",
+      "load_strategy": "upsert",
+      "merge_key": "item_id",
+      "on_failure": "abort"
+    },
+    {
+      "step_id": "refresh_sales_summary",
+      "type": "transform",
+      "sql": "EXEC warehouse.usp_refresh_sales_summary",
+      "on_failure": "alert_and_continue"
+    }
+  ],
+  "alerts": {
+    "on_failure": ["data-engineering-alerts"],
+    "on_sla_breach": ["data-engineering-alerts", "data-management-leads"]
+  },
+  "dependencies": [
+    "customer_dim_refresh"
+  ]
+}
