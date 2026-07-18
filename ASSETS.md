@@ -19,20 +19,22 @@ This single scenario threads through all five chapters — you explore the schem
 ## Folder structure
 
 ```
-Database/   — schema DDL, seed data CSVs, and the PowerShell load script
-Scripts/    — SQL scripts, config files, demo data, and reference docs used in video demos
+Database/      — schema DDL, seed data CSVs, sample rows reference, and the PowerShell load script
+Scripts/ch02/  — SQL scripts for Chapter 2 (query writing and optimisation)
+Scripts/ch03/  — config files and runbooks for Chapter 3 (documentation)
+Scripts/ch04/  — demo data and SQL for Chapter 4 (reliability and incident response)
+Scripts/ch05/  — data and policy docs for Chapter 5 (responsible AI)
 ```
 
 ---
 
 ## Database/
 
-### Core schema and data
-
 | File | Description | Used in |
 |------|-------------|---------|
 | `schema.sql` | DDL for all 10 tables (SQL Server) | Ch1, Ch2, Ch3 |
-| `New-SampleDatabase.ps1` | PowerShell script (dbatools) to create the database and load all CSVs into SQL Server | Ch1 setup |
+| `New-SampleDatabase.ps1` | PowerShell script (dbatools) to create the database and load all CSVs into SQL Server | Setup |
+| `sample_rows.md` | 5 sample rows per table for all 10 tables in markdown format — reference doc for pasting data context inline into prompts | All chapters |
 | `warehouses.csv` | 5 warehouses by region | Ch1, Ch4 |
 | `suppliers.csv` | 5 suppliers (Vendor A–E), domestic + international | Ch1 |
 | `products.csv` | 15 products, generic names (Model A/B/X/Y, Type A/B) | Ch1, Ch2 |
@@ -46,15 +48,13 @@ Scripts/    — SQL scripts, config files, demo data, and reference docs used in
 
 ---
 
-## Scripts/
-
-### Ch2 — Query writing and optimisation
+## Scripts/ch02/
 
 | File | Description |
 |------|-------------|
 | `02_sample_queries.sql` | 5 working demo queries: revenue by segment, top products, low inventory, lapsed customers, pipeline failure rate |
-| `02_03_before.sql` | Slow query with performance issues — used as the starting point for the Ch2 optimisation demo |
-| `02_03_after.sql` | Same query refactored with AI optimisation suggestions applied |
+| `02_03_before.sql` | Slow query with performance issues — starting point for the optimisation demo |
+| `02_03_after.sql` | Same query with AI optimisation suggestions applied |
 | `02_04_broken_before.sql` | 6 broken queries with deliberate faults, no hints — shown to AI for diagnosis (alias in WHERE, ambiguous column, missing GROUP BY, HAVING without GROUP BY, off-by-one date, divide by zero) |
 | `02_04_broken_after.sql` | Same 6 queries with AI-suggested fixes applied |
 | `02_04_broken_sql_additional_before.sql` | Additional broken SQL examples — before fixes |
@@ -62,15 +62,18 @@ Scripts/    — SQL scripts, config files, demo data, and reference docs used in
 | `02_complex_before.sql` | One-line monster query — feed to AI and ask it to refactor for readability |
 | `02_complex_after.sql` | Same logic, refactored into clean CTEs |
 
-### Ch3 — Documentation and knowledge sharing
+---
+
+## Scripts/ch03/
 
 | File | Description |
 |------|-------------|
-| `03_pipeline_config.json` | Full pipeline definition for `daily_order_ingest` — steps, DQ checks, SLA (60 min), alerts, and dependencies. Used as context in lineage, runbook, and stakeholder comms demos. |
-| `03_runbook_daily_order_ingest.md` | AI-generated operational runbook for `daily_order_ingest` — reviewed and edited, used as the "good" output in Ch3 |
-| `03_runbook_daily_order_ingest_old.md` | Earlier draft of the runbook — used to show the before/after of AI-assisted refinement |
+| `03_pipeline_config.json` | Full pipeline definition for `daily_order_ingest` — steps, DQ checks, SLA (60 min), alerts, and dependencies. Used as prompt context in lineage, runbook, and stakeholder comms demos. |
+| `03_runbook_daily_order_ingest.md` | AI-generated operational runbook for `daily_order_ingest` — reviewed and edited output used in the Ch3 runbook demo |
 
-### Ch4 — Reliability and incident response
+---
+
+## Scripts/ch04/
 
 | File | Description |
 |------|-------------|
@@ -78,15 +81,11 @@ Scripts/    — SQL scripts, config files, demo data, and reference docs used in
 | `04_03_schema_drift.sql` | Before/after DDL for the `products` table showing the `unit_price` → `sale_price` column rename — used in the schema drift demo |
 | `04_05_demo_data.md` | 54-row slice of `daily_order_volume` (Jan–Feb 2024) with baseline context and anomaly notes. Used for the two-pass anomaly detection demo: run without weather context first, then add the storm note and rerun. |
 
-### Ch5 — Responsible AI
+---
+
+## Scripts/ch05/
 
 | File | Description |
 |------|-------------|
 | `05_02_customer_summary.csv` | Aggregated customer data by segment (order count, total spend, avg order value) — used in the bias demo to show that AI assumptions about "best" customers don't always match the data |
 | `05_06_sample_AI_policy.md` | One-page sample AI use policy for a data team — referenced in the operating model article |
-
-### Reference
-
-| File | Description |
-|------|-------------|
-| `sample_rows.md` | 5 sample rows per table for all 10 tables in markdown format — paste inline into prompts when AI needs data context without attaching a CSV |
