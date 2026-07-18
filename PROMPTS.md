@@ -223,14 +223,10 @@ Please:
 ```
 Our products table schema has changed. Here is the before and after DDL:
 Before:
-```sql
 [paste before DDL]
-```
 
 After:
-```sql
 [paste after DDL]
-```
 
 Pipeline documentation attached.
 Please:
