@@ -4,6 +4,14 @@ This is the repository for the LinkedIn Learning course `AI for Data Management:
 ![lil-thumbnail-url]
 
 ## Course Description
+AI is transforming how data managers work, from diagnosing failed pipelines to generating documentation and validating SQL. In this course, discover practical, hands-on techniques for using AI to investigate unfamiliar data systems, troubleshoot operational incidents, optimize queries, and maintain data quality at scale. Explore responsible AI practices—addressing bias, hallucinations, privacy, and human oversight—so you can use AI confidently without compromising trust or security. By the end of this course, you'll be equipped with cutting-edge strategies to incorporate AI into your current data lifecycle.
+
+## Learning Objectives
+Evaluate and prioritize at least three AI use cases for your data team using business impact, implementation effort, and operational risk.
+Create a clear AI-assisted data system brief that documents dataset structure, schema relationships, and plain-language explanations for stakeholders.
+Generate, validate, and optimize SQL or transformation logic with AI and verify correctness before implementation.
+Troubleshoot common pipeline, integration, and operations issues by using AI to form and test evidence-based scenarios.
+Design and apply responsible AI practices for data work that address privacy, security, bias, hallucinations, and human oversight.
 
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
@@ -108,17 +116,19 @@ Scripts/ch05/  — data and policy docs for Chapter 5 (responsible AI)
 
 ## Instructor
 
-Instructor name
+Jess Pomfret - Database Platform Architect and Microsoft MVP
 
-Instructor description
+Jess has been working extensively with SQL Server since back in 2011. An expert in the problem-solving aspects of process automation with PowerShell, she is a frequent contributor to dbatools and dbachecks, the open-source PowerShell modules that help automate the management and maintenance of SQL Server instances. Over the course of her career, she has also contributed several configuration resources to the SqlServerDsc module.
+
+Jess grew up in the southwest of England, where she currently lives and works for Data Masterminds.
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/jess-pomfret?u=104).
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
+[lil-course-url]: https://www.linkedin.com/learning/ai-for-data-management-driving-trust-quality-and-efficiency
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D560DAQF2wHcLqE6pNw/learning-public-crop_675_1200/B56Z9x12nNJoAY-/0/1784321371395?e=2147483647&v=beta&t=p8H3uK-OAjSNXzgYIuT9FLlljlqJCduanHwknqgNbOI
 
